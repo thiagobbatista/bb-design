@@ -1,0 +1,19 @@
+{
+  "name": "@barbosabatista/design",
+  "version": "0.1.0",
+  "description": "Identidade visual do Grupo Barbosa Batista: tokens, marca e a faixa do grupo. Fonte única para todos os sites do grupo.",
+  "license": "UNLICENSED",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./tokens.css": "./src/tokens.css"
+  },
+  "files": ["src"],
+  "sideEffects": ["*.css"],
+  "peerDependencies": {
+    "clsx": "^2",
+    "lucide-react": ">=1",
+    "react": ">=19",
+    "tailwind-merge": "^3"
+  }
+}
