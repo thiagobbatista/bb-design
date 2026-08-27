@@ -14,6 +14,16 @@
  *
  * e declara `@source` apontando para o pacote, senão o Tailwind não enxerga
  * as classes usadas dentro dos componentes de marca.
+ *
+ * ## O que entra aqui
+ *
+ * Entra o que dois sites teriam que combinar para não divergir: cor,
+ * tipografia, espaçamento de marca, tratamento do marinho sobre imagem.
+ *
+ * Não entra retorno de interação de produto. O pulso do lance da sala ao vivo
+ * chegou aqui na v0.1.0 por descuido de extração, e voltou para o Private
+ * Market na v0.2.0: quatro sites baixavam animação de leilão, e mudar a duração
+ * do pulso exigiria subir versão de um pacote que ninguém mais usa para isso.
  */
 
 /*
@@ -216,7 +226,7 @@
     @apply font-sans;
     -webkit-font-smoothing: antialiased;
   }
-  /* Números alinhados em tabela de valores e na sala de lances. */
+  /* Números alinhados em qualquer tabela de valores. */
   .tabular {
     font-variant-numeric: tabular-nums;
     letter-spacing: 0;
@@ -268,7 +278,12 @@
 }
 
 @layer utilities {
-  /* Vinheta sobre fotografia, em marinho, para garantir contraste do texto. */
+  /*
+   * Vinheta sobre fotografia, no marinho da marca, para garantir contraste do
+   * texto por cima. Fica no pacote mesmo sem uso hoje fora do Private Market:
+   * dois sites que coloquem texto sobre foto precisam do mesmo marinho, e é
+   * isso que a torna identidade e não componente de produto.
+   */
   .scrim-bottom {
     background-image: linear-gradient(
       to top,
@@ -312,22 +327,8 @@
   }
 }
 
-/* Pulso do lance recebido na sala ao vivo. */
-@keyframes bid-pulse {
-  0% {
-    box-shadow: 0 0 0 0 var(--brand);
-  }
-  100% {
-    box-shadow: 0 0 0 14px transparent;
-  }
-}
-.bid-pulse {
-  animation: bid-pulse 1.1s ease-out;
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .animate-in-up,
-  .bid-pulse {
+  .animate-in-up {
     animation: none;
   }
   .card-inst {
