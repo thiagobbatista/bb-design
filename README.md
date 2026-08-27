@@ -34,11 +34,25 @@ const nextConfig: NextConfig = {
 @import "tailwindcss";
 @import "@barbosabatista/design/tokens.css";
 
-/* Sem isto o Tailwind não enxerga as classes usadas dentro do pacote
-   e os componentes de marca saem sem estilo. O caminho é relativo a
-   este arquivo. */
+/* Redundante e explícito. Medimos: build com e sem esta linha produz
+   o mesmo CSS, porque o Tailwind v4 já varre o diretório de um CSS
+   importado. Quem segura a integração é o @import acima. */
 @source "../../node_modules/@barbosabatista/design/src";
 ```
+
+### Verificar que o pacote chegou
+
+A integração quebra em silêncio: sem o `@import`, o site perde cor, tipografia e
+todas as classes de marca, e o build não reclama. Vale um teste depois do build:
+
+```json
+"design:check": "grep -rq -- '--navy:#002060' .next/static/chunks/*.css || (echo 'ERRO: tokens do bb-design fora do bundle' && exit 1)"
+```
+
+A sentinela é a **declaração de um token**, e não uma classe. Classe é gerada por
+menção: o Tailwind varre markdown e comentário, então citar `fill-brand` na
+documentação faz a classe aparecer no CSS e o teste passar sozinho. Declaração de
+custom property só existe se o arquivo do pacote entrou no bundle.
 
 **3. Usar.**
 
