@@ -1,8 +1,10 @@
 import { cn } from "../lib/utils";
 
 /**
- * Marca do grupo: quadrado sólido azul com um losango branco ao centro, ao lado
- * do nome. O símbolo não muda entre os negócios; muda só o qualificador embaixo
+ * Marca do grupo: quadrado sólido azul com quatro losangos brancos convergindo,
+ * ao lado do nome. Desenho trocado em 29/08/2026 porque o anterior, um losango
+ * único com contra-forma, era praticamente idêntico ao da referência que
+ * inspirou a identidade — risco de marca, não só de estética. O símbolo não muda entre os negócios; muda só o qualificador embaixo
  * do nome. É isso que amarra os cinco sites visualmente.
  *
  * Nenhum componente daqui envolve o nome num link. Cada aplicação embrulha com
@@ -19,8 +21,13 @@ export function Monogram({ className }: { className?: string }) {
       className={cn("h-10 w-10", className)}
     >
       <rect width="44" height="44" rx="6" className="fill-brand" />
-      <path d="M22 10.5 33.5 22 22 33.5 10.5 22 22 10.5Z" fill="white" />
-      <path d="M22 17.2 26.8 22 22 26.8 17.2 22 22 17.2Z" className="fill-brand" />
+      {/* Quatro losangos convergindo, com vazio no centro: as frentes do grupo
+          numa mesma mesa. As pontas não se tocam de propósito — encostando,
+          a marca vira mancha a 24px, que é o tamanho da aba do navegador. */}
+      <path d="M22 9 26.5 13.5 22 18 17.5 13.5Z" fill="white" />
+      <path d="M22 35 26.5 30.5 22 26 17.5 30.5Z" fill="white" />
+      <path d="M9 22 13.5 17.5 18 22 13.5 26.5Z" fill="white" />
+      <path d="M35 22 30.5 17.5 26 22 30.5 26.5Z" fill="white" />
     </svg>
   );
 }
