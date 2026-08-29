@@ -21,7 +21,9 @@ export const GROUP = {
     { key: "advogados", label: "Advogados", subdomain: "advogados" },
     { key: "partners", label: "Partners", subdomain: "partners" },
     { key: "capital", label: "Capital", subdomain: "capital" },
-    { key: "funding", label: "Funding", subdomain: "funding" },
+    // Funding existe no código do site do grupo, mas está fora do ar desde
+    // 29/08/2026 enquanto o Thi decide o desenho da plataforma. Volta aqui
+    // quando voltar lá.
     { key: "private-market", label: "Private Market", subdomain: "privatemarket" },
   ] as const satisfies readonly GroupBusiness[],
 } as const;
