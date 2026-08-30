@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { cn } from "../lib/utils";
-import { GROUP, type GroupBusiness } from "../group";
+import { GROUP, endereco, type GroupBusiness } from "../group";
 
 /**
  * Faixa fina no topo com todos os endereços do grupo. É o que torna o grupo
@@ -40,7 +40,7 @@ export function GroupStrip({
             return (
               <a
                 key={b.key}
-                href={`https://${b.subdomain}.${rootDomain}`}
+                href={endereco(b, rootDomain)}
                 // `page`, e não `true`: é o valor que faz o leitor de tela
                 // anunciar "página atual" em vez de um estado sem significado.
                 aria-current={active ? "page" : undefined}

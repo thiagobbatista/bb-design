@@ -78,6 +78,26 @@ Os componentes não embrulham o nome num link: cada aplicação usa o seu própr
 `Link`, porque o destino muda conforme o site é servido por subdomínio ou por
 caminho. Por isso o pacote não depende do Next.
 
+## Negócio com domínio próprio (desde a v0.7.0)
+
+Até a v0.6.0 a faixa presumia que todo negócio do grupo morava sob
+`barbosabatista.com.br`. O Aluguei quebrou a premissa: marca e domínio próprios,
+e mesmo assim negócio do grupo. Pertencer ao grupo e ser hospedado sob o domínio
+do grupo são coisas diferentes.
+
+`GroupBusiness` agora tem `subdomain` **ou** `domain`, os dois opcionais, e o
+endereço se obtém por `endereco(business)`, nunca montando a string à mão.
+
+```ts
+import { GROUP, endereco } from "@barbosabatista/design";
+GROUP.businesses.map((b) => endereco(b)); // funciona nos dois casos
+```
+
+⚠️ **Ao atualizar um site consumidor da v0.6.0 para cá**, procure por
+`` `https://${b.subdomain}.` `` no projeto. Interpolação direta continua
+compilando e passa a gerar `https://undefined.barbosabatista.com.br` para quem
+tem domínio próprio. O `tsc` não pega, porque o campo virou opcional.
+
 ## Marca
 
 Manrope em tudo, caixa de frase. Base branca com faixas `band-navy` que invertem
