@@ -22,6 +22,7 @@ export const GROUP = {
     { key: "partners", label: "Partners", subdomain: "partners" },
     { key: "capital", label: "Capital", subdomain: "capital" },
     { key: "funding", label: "Funding", subdomain: "funding" },
+    { key: "instituto", label: "Instituto", subdomain: "instituto" },
     { key: "private-market", label: "Private Market", subdomain: "privatemarket" },
   ] as const satisfies readonly GroupBusiness[],
 } as const;
