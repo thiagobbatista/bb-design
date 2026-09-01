@@ -45,5 +45,6 @@ export const GROUP = {
     { key: "instituto", label: "Instituto", subdomain: "instituto" },
     { key: "private-market", label: "Private Market", subdomain: "privatemarket" },
     { key: "aluguei", label: "Aluguei", domain: "www.aluguei.com.br" },
+    { key: "vix-capital", label: "Vix Capital", domain: "www.vixcapital.com.br" },
   ] as const satisfies readonly GroupBusiness[],
 } as const;
