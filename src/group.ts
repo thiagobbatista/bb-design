@@ -40,7 +40,11 @@ export const GROUP = {
   businesses: [
     { key: "advogados", label: "Advogados", subdomain: "advogados" },
     { key: "partners", label: "Partners", subdomain: "partners" },
-    { key: "capital", label: "Capital", subdomain: "capital" },
+    // O rótulo mudou para "Venture & Private" em 31/08/2026, e o `key` e o
+    // subdomínio **não** mudaram de propósito: `key` é identificador estável, e
+    // trocar o subdomínio quebraria os links já publicados. Nome é marca,
+    // endereço é infraestrutura, e eles não precisam andar juntos.
+    { key: "capital", label: "Venture & Private", subdomain: "capital" },
     { key: "funding", label: "Funding", subdomain: "funding" },
     { key: "instituto", label: "Instituto", subdomain: "instituto" },
     { key: "private-market", label: "Private Market", subdomain: "privatemarket" },
