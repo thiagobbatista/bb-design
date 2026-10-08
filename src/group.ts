@@ -45,6 +45,12 @@ export const GROUP = {
     // trocar o subdomínio quebraria os links já publicados. Nome é marca,
     // endereço é infraestrutura, e eles não precisam andar juntos.
     { key: "capital", label: "Venture & Private", subdomain: "capital" },
+    // Entrou na faixa em 08/10/2026, dois meses depois de o site existir. O que
+    // segurava não era decisão, era DNS: `tecnologia.barbosabatista.com.br` não
+    // existia, e um negócio na faixa sem endereço que responda vira link morto
+    // em todas as páginas de todos os sites do grupo. O subdomínio foi criado
+    // antes deste commit.
+    { key: "tecnologia", label: "Tecnologia", subdomain: "tecnologia" },
     { key: "funding", label: "Funding", subdomain: "funding" },
     { key: "instituto", label: "Instituto", subdomain: "instituto" },
     { key: "private-market", label: "Private Market", subdomain: "privatemarket" },
