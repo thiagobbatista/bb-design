@@ -50,8 +50,15 @@ export const GROUP = {
     // existia, e um negócio na faixa sem endereço que responda vira link morto
     // em todas as páginas de todos os sites do grupo. O subdomínio foi criado
     // antes deste commit.
-    { key: "tecnologia", label: "Tecnologia", subdomain: "tecnologia" },
     { key: "funding", label: "Funding", subdomain: "funding" },
+    // Frente imobiliária, criada em 09/10/2026 como casa do Private Market e da
+    // Aluguei. As duas CONTINUAM nesta lista logo abaixo, e isso é proposital:
+    // o pacote diz quem é o grupo, e as duas são empresas do grupo com registro
+    // próprio. Quem decide não listá-las na faixa é cada projeto, no recorte que
+    // faz ao consumir esta lista — no site do grupo elas saíram da faixa no
+    // mesmo dia, porque a porta delas passou a ser o Real Estate.
+    { key: "realestate", label: "Real Estate", subdomain: "realestate" },
+    { key: "tecnologia", label: "Tecnologia", subdomain: "tecnologia" },
     { key: "instituto", label: "Instituto", subdomain: "instituto" },
     { key: "private-market", label: "Private Market", subdomain: "privatemarket" },
     { key: "aluguei", label: "Aluguei", domain: "www.aluguei.com.br" },
